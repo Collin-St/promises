@@ -13,7 +13,7 @@ var Promise = require('bluebird');
 
 
 
-var fetchProfileAndWriteToFile = function(readFilePath, writeFilePath) {
+var fetchProfileAndWriteToFile = function (readFilePath, writeFilePath) {
   // TODO
 };
 
