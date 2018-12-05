@@ -27,7 +27,11 @@ var getGitHubProfile = function(user, callback) {
   });
 };
 
-var getGitHubProfileAsync; // TODO
+// TODO
+var getGitHubProfileAsync = function(user) {
+  var asyncFunc = Promise.promisify(getGitHubProfile);
+  return asyncFunc(user);
+}
 
 
 // (2) Asyncronous token generation
@@ -38,7 +42,11 @@ var generateRandomToken = function(callback) {
   });
 };
 
-var generateRandomTokenAsync; // TODO
+// TODO
+var generateRandomTokenAsync = function() {
+  var asyncFunc = Promise.promisify(generateRandomToken);
+  return asyncFunc();
+ }
 
 
 // (3) Asyncronous file manipulation
@@ -56,7 +64,11 @@ var readFileAndMakeItFunny = function(filePath, callback) {
   });
 };
 
-var readFileAndMakeItFunnyAsync; // TODO
+// TODO
+var readFileAndMakeItFunnyAsync = function(filePath) {
+  var asyncFunc = Promise.promisify(readFileAndMakeItFunny);
+  return asyncFunc(filePath);
+} 
 
 // Export these functions so we can test them and reuse them in later exercises
 module.exports = {
