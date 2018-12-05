@@ -59,16 +59,24 @@ var readFileAndMakeItFunny = function(filePath, callback) {
         return line + ' lol';
       })
       .join('\n');
+      // Promise.all(funnyFile).then( (file) => {
 
-    callback(funnyFile);
+        callback(null, funnyFile);
+      // });
   });
 };
 
 // TODO
-var readFileAndMakeItFunnyAsync = function(filePath) {
-  var asyncFunc = Promise.promisify(readFileAndMakeItFunny);
-  return asyncFunc(filePath);
-} 
+var readFileAndMakeItFunnyAsync = Promise.promisify(readFileAndMakeItFunny);
+
+// var readFileAndMakeItFunnyAsync = function(filePath) {
+//   var asyncFunc = Promise.promisify(readFileAndMakeItFunny);
+//   console.log('FILEPATH------- ,', filePath)
+//   return asyncFunc(filePath)
+//     .then(function(file) {
+//       return file;
+//     })
+// }
 
 // Export these functions so we can test them and reuse them in later exercises
 module.exports = {
